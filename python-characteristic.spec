@@ -9,7 +9,7 @@ Summary:	Python attributes without boilerplate
 Summary(pl.UTF-8):	Atrybuty w Pythonie bez ramowego kodu
 Name:		python-characteristic
 Version:	14.3.0
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/characteristic/
