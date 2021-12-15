@@ -20,14 +20,14 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.6
-BuildRequires:	python-setuptools >= 7.0
+BuildRequires:	python-setuptools >= 1:7.0
 %if %{with tests}
 BuildRequires:	python-pytest
 %endif
 %endif
 %if %{with python3}
 BuildRequires:	python3-modules >= 1:3.3
-BuildRequires:	python3-setuptools >= 7.0
+BuildRequires:	python3-setuptools >= 1:7.0
 %if %{with tests}
 BuildRequires:	python-pytest
 %endif
