@@ -1,0 +1,8 @@
+--- characteristic-14.3.0/setup.cfg.orig	2014-12-19 14:48:48.000000000 +0100
++++ characteristic-14.3.0/setup.cfg	2022-03-15 06:26:49.668485181 +0100
+@@ -1,4 +1,4 @@
+-[pytest]
++[tool:pytest]
+ minversion = 2.6
+ strict = true
+ norecursedirs = .* build dist test_data *.egg

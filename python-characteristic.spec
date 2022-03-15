@@ -15,6 +15,7 @@ Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/characteristic/
 Source0:	https://files.pythonhosted.org/packages/source/c/characteristic/characteristic-%{version}.tar.gz
 # Source0-md5:	b249368dd021fde1c06b4802867c0913
+Patch0:		%{name}-setup.patch
 URL:		https://characteristic.readthedocs.org/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -118,6 +119,7 @@ Dokumentacja API modułu Pythona characteristic.
 
 %prep
 %setup -q -n characteristic-%{version}
+%patch0 -p1
 
 %build
 %if %{with python2}
