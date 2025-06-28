@@ -34,7 +34,7 @@ BuildRequires:	python-pytest
 %endif
 %endif
 %if %{with doc}
-BuildRequires:	sphinx-pdg
+BuildRequires:	sphinx-pdg-2
 %endif
 Requires:	python-modules >= 1:2.6
 BuildArch:	noarch
@@ -123,16 +123,28 @@ Dokumentacja API modułu Pythona characteristic.
 
 %build
 %if %{with python2}
-%py_build %{?with_tests:test}
+%py_build
+
+%if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
+%{__python} -m pytest test_characteristic.py
+%endif
 %endif
 
 %if %{with python3}
-%py3_build %{?with_tests:test}
+%py3_build
+
+%if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
+%{__python3} -m pytest test_characteristic.py
+%endif
 %endif
 
 %if %{with doc}
+# use old sphinx for now because of incompatible intersphinx mappings
 PYTHONPATH=$(pwd) \
-%{__make} -C docs html
+%{__make} -C docs html \
+	SPHINXBUILD=sphinx-build-2
 %endif
 
 %install
